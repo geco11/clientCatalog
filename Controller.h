@@ -12,6 +12,6 @@ public:
 	std::vector<std::string> getAllCountries()override;
 	std::vector<Collection> getCollections(std::string_view country)override;
 	Controller();
-	~Controller();
+	~Controller()=default;
 };
-
+using ControllerPtr = std::shared_ptr<Controller>;

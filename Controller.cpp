@@ -12,3 +12,14 @@ int Controller::increment(size_t id) {
 int Controller::decrement(size_t id) {
 	return client->call("decrement", id).as<int>();
 }
+std::vector<Collection> Controller::getCollections(std::string_view country) {
+	return client->call("getCollections", country.data()).as<std::vector<Collection>>();
+}
+std::vector<CoinPtr> Controller::search(Collection collection) {
+	return client->call("search", collection).as<std::vector<CoinPtr>>();
+}
+bool Controller::toggleMark(size_t id) {
+	return client->call("toggleMark", id).as<bool>();
+}
+
+

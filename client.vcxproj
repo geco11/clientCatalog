@@ -129,11 +129,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="client.cpp" />
+    <ClCompile Include="Modules\CollectionModule.cpp" />
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Modules\CountriesModule.cpp" />
+    <ClCompile Include="Modules\Module.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Modules\CollectionModule.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="Modules\CountriesModule.h" />
+    <ClInclude Include="Modules\Module.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
