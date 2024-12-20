@@ -3,6 +3,7 @@
 #include<IController.h>
 class Controller :public IController
 {
+	std::vector<CoinPtr> coinsToPointer(const std::vector<Coin> &a);
 	std::unique_ptr<rpc::client>client=nullptr;
 public:
 	std::vector<CoinPtr> search(Collection collection)override;

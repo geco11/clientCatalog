@@ -15,8 +15,16 @@ int Controller::decrement(size_t id) {
 std::vector<Collection> Controller::getCollections(std::string_view country) {
 	return client->call("getCollections", country.data()).as<std::vector<Collection>>();
 }
+std::vector<CoinPtr> Controller::coinsToPointer(const std::vector<Coin> &a){
+	std::vector<CoinPtr> res(a.size());
+	for (size_t i = 0; i < a.size(); ++i) {
+		res[i]=std::make_shared<Coin>(a[i]);
+	}
+	return res;
+}
 std::vector<CoinPtr> Controller::search(Collection collection) {
-	return client->call("search", collection).as<std::vector<CoinPtr>>();
+	auto coins= client->call("search", collection).as<std::vector<Coin>>();
+	return coinsToPointer(coins);
 }
 bool Controller::toggleMark(size_t id) {
 	return client->call("toggleMark", id).as<bool>();

@@ -6,7 +6,7 @@ Modules CollectionModule::activate(std::any& context)
 	std::vector<Collection> collections=controller->getCollections(country);
 	int i = 0;
 	for (const Collection& a : collections) {
-		std::cout << i++ << " " << a.getName()<<" "<< a.getCountOfCoins() << "\n";
+		std::cout << ++i << " " << a.getName()<<" "<< a.getCountOfCoins() << "\n";
 	}
 	printf("chosse the number of the collection or enter 0 to exit, enter -1 to go back to countries: ");
 	int cmd;

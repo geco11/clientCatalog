@@ -6,6 +6,7 @@ enum Modules
 	Countries,
 	Collections,
 	Coins,
+	CoinDetails,
 	Exit
 };
 class Module
