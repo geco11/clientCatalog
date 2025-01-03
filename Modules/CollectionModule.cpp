@@ -2,7 +2,10 @@
 
 Modules CollectionModule::activate(std::any& context)
 {
-	std::string country = std::any_cast<std::string>(context);
+	if (context.has_value()) {
+		country = std::any_cast<std::string>(context);
+		context.reset();
+	}
 	std::vector<Collection> collections=controller->getCollections(country);
 	int i = 0;
 	for (const Collection& a : collections) {

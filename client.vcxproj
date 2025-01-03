@@ -131,6 +131,8 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="client.cpp" />
+    <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Modules\CoinDetailsModule.cpp" />
     <ClCompile Include="Modules\CoinModule.cpp" />
     <ClCompile Include="Modules\CollectionModule.cpp" />
     <ClCompile Include="Controller.cpp" />
@@ -139,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Modules\CoinDetailsModule.h" />
     <ClInclude Include="Modules\CoinModule.h" />
     <ClInclude Include="Modules\CollectionModule.h" />
     <ClInclude Include="Controller.h" />

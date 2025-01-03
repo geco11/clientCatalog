@@ -2,7 +2,10 @@
 
 Modules CoinModule::activate(std::any& context)
 {
-	Collection collection = std::any_cast<Collection>(context);
+	if (context.has_value()) {
+	    collection = std::any_cast<Collection>(context);
+		context.reset();
+	}
 	std::vector<CoinPtr> coins = controller->search(collection);
 	int i = 0;
 	for (const CoinPtr a : coins) {
@@ -17,7 +20,7 @@ Modules CoinModule::activate(std::any& context)
 	if (cmd == 0)
 		return Modules::Exit;
 	if (cmd == -1)
-		return Modules::Countries;
+		return Modules::Collections;
 	context = coins[cmd-1];
-	return Modules::Coins;
+	return Modules::CoinDetails;
 }
