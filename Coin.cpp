@@ -11,7 +11,7 @@ std::ostream& operator<<(std::ostream& out, const Coin& coin) {
 	out << std::left << std::setw(20) << "Weight (grams):" << (coin.weight == -1 ? "N/A" : std::to_string(coin.weight)) << std::endl;
 	out << std::left << std::setw(20) << "Diameter (mm):" << (coin.diameter == -1 ? "N/A" : std::to_string(coin.diameter)) << std::endl;
 	out << std::left << std::setw(20) << "Thickness (mm):" << (coin.thickness == -1 ? "N/A" : std::to_string(coin.thickness)) << std::endl;
-	out << std::left << std::setw(20) << "Condition:" << (coin.condition == -1 ? "N/A" : std::string(1, coin.condition)) << std::endl;
+	out << std::left << std::setw(20) << "Condition:" << (coin.condition == -1 ? "N/A" : Coin::numberToCondition(coin.condition)) << std::endl;
 	out << std::left << std::setw(20) << "Quantity:" << (coin.quantity == -1 ? "N/A" : std::to_string(coin.quantity)) << std::endl;
 	out << std::left << std::setw(20) << "Country:" << (coin.country.empty() ? "N/A" : coin.country) << std::endl;
 	out << std::left << std::setw(20) << "Shape:" << (coin.shape.empty() ? "N/A" : coin.shape) << std::endl;
